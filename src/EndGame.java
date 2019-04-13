@@ -9,15 +9,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class endGame {
+public class EndGame {
     @FXML
     public Label scoreL;
 
     @FXML
-    void initialize()
-    {
+    void initialize() {
         scoreL.setAlignment(Pos.CENTER);
-        switch (game.winner) {
+        switch (Game.winner) {
             case "X":
                 scoreL.setText("X wygrał!");
                 break;
@@ -32,7 +31,7 @@ public class endGame {
 
     public void onNewGame() {
         try {
-            Parent endGameStage = FXMLLoader.load(getClass().getResource("game.fxml"));
+            Parent endGameStage = FXMLLoader.load(getClass().getResource("Game.fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(endGameStage, 300, 300));
             stage.setResizable(false);
